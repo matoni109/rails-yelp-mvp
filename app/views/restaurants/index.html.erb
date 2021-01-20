@@ -1,16 +1,18 @@
 <div class="container mx-auto py-3">
-  <% @restaurants.each do |restaurant| %>
+    <% @restaurants.each do |restaurant| %>
     <h4 class="mx-auto py-3">
-      <%= restaurant.name %>
+        <%= restaurant.name %>
     </h4>
     <ul>
-      <li>
-        <%= restaurant.address %>
-      </li>
-      <li>
-        <%= restaurant.category %>
-      </li>
+        <li>
+            <%= restaurant.address %>
+        </li>
+        <li>
+            <%= restaurant.category %>
+        </li>
     </ul>
-    <p>  <%= link_to restaurant.name, restaurant_path(restaurant) %></p>
-  <% end %>
+    <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%>
+    <% end %>
 </div>
+<!-- #     restaurant GET    /restaurants/:id(.:format)                        restaurants#show
+ -->

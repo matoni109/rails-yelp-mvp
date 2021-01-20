@@ -10,23 +10,27 @@ Review.destroy_all
 Restaurant.destroy_all
 puts "done cleaning "
 
-5.times do
+10.times do
   Restaurant.create(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
-    phone_number: Faker::PhoneNumber,
+    phone_number: Faker::PhoneNumber.cell_phone,
     category: ["chinese", "italian", "japanese", "french", "belgian"].sample,
-
   )
   #binding.pry
   puts "made #{Restaurant.last.name}"
+end
 
-
+15.times do
   Review.create(
-    content: Faker::Restaurant.description,
+    content: Faker::Food.description,
     rating: rand(0..5),
-    restaurant_id: Restaurant.last.id
+    restaurant_id: Restaurant.pluck(:id).sample
   )
-  #binding.pry
+  #binding.pry Restaurant.pluck(:id)
+  puts "wrote #{Review.count}"
   puts "wrote #{Review.last.content}"
 end
+
+
+puts " finished seeds !!"
