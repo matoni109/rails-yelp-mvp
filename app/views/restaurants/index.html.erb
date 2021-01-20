@@ -1,17 +1,21 @@
 <div class="container mx-auto py-3">
-    <% @restaurants.each do |restaurant| %>
+  <%= link_to "Add a Venue", new_restaurant_path, class: "btn btn-danger"%>
+  <% @restaurants.each do |restaurant| %>
     <h4 class="mx-auto py-3">
-        <%= restaurant.name %>
+      <%= restaurant.name %>
     </h4>
     <ul>
-        <li>
-            <%= restaurant.address %>
-        </li>
-        <li>
-            <%= restaurant.category %>
-        </li>
+      <li>
+        Address: <%= restaurant.address %>
+      </li>
+      <li>
+        Type: <%= restaurant.category %>
+      </li>
+      <li>
+        Phone: <%= restaurant.phone_number %>
+      </li>
     </ul>
     <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%>
     <%= link_to "See reviews", review_path(restaurant.id), class: "btn btn-primary"%>
-    <% end %>
+  <% end %>
 </div>

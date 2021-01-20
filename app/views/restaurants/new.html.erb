@@ -1,9 +1,9 @@
-<div class="container">
-    <h1>Add a New Venue</h1>
-    <%= simple_form_for [ @restaurant ] do |f| %>
+<div class="container py-3">
+  <h1>Add a New Venue</h1>
+  <%= simple_form_for [ @restaurant ] do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
     <%= f.submit "Submit Venue", class: "btn btn-primary" %>
-    <% end %>
+  <% end %>
 </div>

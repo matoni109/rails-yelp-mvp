@@ -21,7 +21,7 @@ puts "done cleaning "
   puts "made #{Restaurant.last.name}"
 end
 
-15.times do
+30.times do
   Review.create(
     content: Faker::Food.description,
     rating: rand(0..5),
