@@ -6,6 +6,12 @@ class ReviewsController < ApplicationController
 
   end
 
+  def show
+    @restaurant = Restaurant.find(params[:id])
+    @reviews = Review.where(restaurant_id: params[:id])
+
+  end
+
   def create
     @review = Review.new(review_params)
     # we need `restaurant_id` to associate review with corresponding restaurant

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :restaurants  do
 
     # needs resturant IDS
-    resources :reviews, only: [ :new, :create ]
+    resources :reviews, only: [ :new, :create, :show ]
   end
   # outside of Restaurants
   resources :reviews, only: [ :destroy, :show, :update ]
